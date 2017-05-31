@@ -1,6 +1,7 @@
 {{#partial "content"}}
 {{#if username}}
     Logged in as {{ username }}
+    <a href="/employers">Employers</a>
 {{else}}
     <h1>Log in</h1>
     <form action="/sign-in" method="post">

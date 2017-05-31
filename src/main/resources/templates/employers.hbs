@@ -1,0 +1,21 @@
+{{#partial "content"}}
+    <h1>Employers</h1>
+
+    <ul>
+        {{#each employers}}
+            <li>
+                <form action="/employers/{{ slug }}/vote" method="post">
+                    <a href="/employers/{{ slug }}">{{ employerName }}</a> ( {{ voteCount }} votes) <button>Vote</button>
+                </form>
+            </li>
+        {{/each}}
+    </ul>
+
+    <form action="/employers" method="post">
+        <input type="text" placeholder="Enter Employer name or company" name="employerName">
+        <button>Submit</button>
+    </form>
+{{/partial}}
+
+
+{{> base.hbs}}
