@@ -1,7 +1,9 @@
 {{#partial "content"}}
     <h1>{{ employer.employerName }}</h1>
     <h2>Created by {{ employer.createdBy }}</h2>
-
+    <form action="/employers/{{ employer.slug }}/vote" method="post">
+        {{ employer.voteCount }}<button>Vote</button>
+    </form>
 {{/partial}}
 
 

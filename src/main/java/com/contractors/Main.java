@@ -57,6 +57,11 @@ public class Main {
             model.put("employer", dao.findBySlug(req.params("slug")));
             return new ModelAndView(model, "employer.hbs");
         }, new HandlebarsTemplateEngine());
-        post("/employers/:slug/vote", (req, res) -> null);
+        post("/employers/:slug/vote", (req, res) -> {
+            Employer employer = dao.findBySlug(req.params("slug"));
+            employer.addVoter(req.attribute("username"));
+            res.redirect("/employers");
+            return null;
+        });
     }
 }

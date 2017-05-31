@@ -32,6 +32,10 @@ public class Employer {
         return voters;
     }
 
+    public void addVoter(String voter){
+        voters.add(voter);
+    }
+
     public int getVoteCount(){
         return voters.size();
     }
