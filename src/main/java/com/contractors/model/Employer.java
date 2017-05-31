@@ -1,6 +1,5 @@
 package com.contractors.model;
 
-import java.io.IOException;
 import java.util.HashSet;
 import com.github.slugify.Slugify;
 import java.util.Set;
@@ -32,8 +31,8 @@ public class Employer {
         return voters;
     }
 
-    public void addVoter(String voter){
-        voters.add(voter);
+    public boolean addVoter(String voter){
+        return voters.add(voter);
     }
 
     public int getVoteCount(){
