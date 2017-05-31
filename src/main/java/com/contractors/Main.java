@@ -52,7 +52,11 @@ public class Main {
             res.redirect("/employers");
             return null;
         });
-        get("/employers/:slug", (req, res) -> null);
+        get("/employers/:slug", (req, res) -> {
+            Map<String, Object> model = new HashMap<>();
+            model.put("employer", dao.findBySlug(req.params("slug")));
+            return new ModelAndView(model, "employer.hbs");
+        }, new HandlebarsTemplateEngine());
         post("/employers/:slug/vote", (req, res) -> null);
     }
 }

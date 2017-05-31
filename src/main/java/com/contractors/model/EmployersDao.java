@@ -3,7 +3,9 @@ package com.contractors.model;
 import java.util.List;
 
 public interface EmployersDao {
-    public List<Employer> findAll();
+    List<Employer> findAll();
+
+    Employer findBySlug(String slug);
 
     void add(Employer employer);
 }

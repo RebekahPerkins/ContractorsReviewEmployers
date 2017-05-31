@@ -16,6 +16,14 @@ public class EmployersDaoImpl implements EmployersDao {
     }
 
     @Override
+    public Employer findBySlug(String slug) {
+        return employers.stream()
+                .filter(idea -> idea.getSlug().equals(slug))
+                .findFirst()
+                .orElseThrow(NotFoundException::new);
+    }
+
+    @Override
     public void add(Employer employer) {
         employers.add(employer);
     }
