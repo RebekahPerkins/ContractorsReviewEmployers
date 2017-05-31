@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmployersDaoImpl implements EmployersDao {
+//TODO This is not a real implementation, just stores in memory
     private List<Employer> employers;
 
     public EmployersDaoImpl() {
